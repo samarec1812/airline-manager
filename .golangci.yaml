@@ -12,7 +12,7 @@ linters-settings:
   whitespace:
     multi-if: true
 
-#список линтеров
+# list linters
 linters:
   disable-all: true
   enable:
