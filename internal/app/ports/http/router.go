@@ -4,7 +4,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"golang.org/x/exp/slog"
-account
+
 	"github.com/samarec1812/airline-manager/internal/app/service"
 )
 

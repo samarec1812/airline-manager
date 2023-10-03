@@ -1,12 +1,14 @@
 package http
 
 import (
+	"net/http"
+
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/render"
+	"golang.org/x/exp/slog"
+
 	entity "github.com/samarec1812/airline-manager/internal/app/entity/airline"
 	"github.com/samarec1812/airline-manager/internal/app/service"
-	"golang.org/x/exp/slog"
-	"net/http"
 )
 
 func CreateAirline(log *slog.Logger, a service.App) http.HandlerFunc {
