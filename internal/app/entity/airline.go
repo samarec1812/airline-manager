@@ -1,4 +1,4 @@
-package airline
+package entity
 
 type Airline struct {
 	Code string `db:"code"`

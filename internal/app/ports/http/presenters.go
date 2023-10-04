@@ -9,6 +9,22 @@ type deleteAirlineRequest struct {
 	Code string `json:"code"`
 }
 
+type createAccountRequest struct {
+	SchemaID int64 `json:"schema_id"`
+}
+
+type deleteAccountRequest struct {
+	AccountID int64 `json:"account_id"`
+}
+
+type createSchemaRequest struct {
+	Name string `json:"name"`
+}
+
+type deleteSchemaRequest struct {
+	SchemaID int64 `json:"schema_id"`
+}
+
 func AirlineErrorResponse(err error) map[string]any {
 	resp := make(map[string]any)
 

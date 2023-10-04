@@ -2,16 +2,15 @@ package airline
 
 import (
 	"context"
-	"database/sql"
-
-	entity "github.com/samarec1812/airline-manager/internal/app/entity/airline"
+	"github.com/jmoiron/sqlx"
+	"github.com/samarec1812/airline-manager/internal/app/entity"
 )
 
 type Repository struct {
-	db *sql.DB
+	db *sqlx.DB
 }
 
-func NewAirlineRepository(db *sql.DB) *Repository {
+func NewAirlineRepository(db *sqlx.DB) *Repository {
 	return &Repository{
 		db: db,
 	}

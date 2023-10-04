@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/samarec1812/airline-manager/internal/app/repository/postgres/account"
+	"github.com/samarec1812/airline-manager/internal/app/repository/postgres/schema"
 	"net/http"
 	"os"
 	"os/signal"
@@ -39,8 +41,10 @@ func Run(cfg *config.Config) {
 
 	log.Info("database connect successful")
 	airlineRepo := airline.NewAirlineRepository(db)
+	accountRepo := account.NewAccountRepository(db)
+	schemaRepo := schema.NewSchemaRepository(db)
 
-	app := service.NewApp(airlineRepo)
+	app := service.NewApp(airlineRepo, accountRepo, schemaRepo)
 	srv := ht.NewHTTPServer(cfg.HTTPServer, log, app)
 
 	eg, ctx := errgroup.WithContext(context.Background())
